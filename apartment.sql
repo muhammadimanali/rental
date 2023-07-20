@@ -1,0 +1,142 @@
+-- SELECT 
+--   * 
+-- FROM 
+--   rental 
+-- SELECT 
+--   * 
+-- FROM 
+--   facilities total of rental available in Selangor 
+--   and Kuala Lumpur 
+-- SELECT 
+--   count(`prop_name`) as count_of_rent 
+-- FROM 
+--   rental Total of rental in Kuala Lumpur 
+-- SELECT 
+--   count(`prop_name`) as rent_in_KL 
+-- FROM 
+--   rental 
+-- WHERE 
+--   region = 'Kuala Lumpur' Total of rental in Selangor 
+-- SELECT 
+--   count(`prop_name`) as rent_in_Selangor 
+-- FROM 
+--   rental 
+-- WHERE 
+--   region = 'Selangor' Count of rental under RM1500 in KL 
+--   and Selangor 
+-- SELECT 
+--   count(`prop_name`) 
+-- FROM 
+--   rental 
+-- WHERE 
+--   `monthly_rent_[0]` < 1500 Count of rental under RM1500 in KL 
+-- SELECT 
+--   count(`prop_name`) 
+-- FROM 
+--   rental 
+-- WHERE 
+--   `monthly_rent_[0]` < 1500 
+--   AND region = 'Kuala Lumpur' Count of rental under RM1500 in Selangor 
+-- SELECT 
+--   count(`prop_name`) 
+-- FROM 
+--   rental 
+-- WHERE 
+--   `monthly_rent_[0]` < 1500 
+--   AND region = 'Selangor' Average monthly rent in Selangor 
+-- SELECT 
+--   avg(`monthly_rent_[0]`) 
+-- FROM 
+--   rental 
+-- WHERE 
+--   region = 'Selangor' Average monthly rent in Kuala Lumpur 
+-- SELECT 
+--   avg(`monthly_rent_[0]`) 
+-- FROM 
+--   rental 
+-- WHERE 
+--   region = 'Kuala Lumpur' List rental with price less than 1500 in Kuala Lumpur, 
+--   Selangor 
+-- SELECT 
+--   prop_name, 
+--   `monthly_rent_[0]`, 
+--   region 
+-- FROM 
+--   rental 
+-- WHERE 
+--   `monthly_rent_[0]` < 1500 
+-- SELECT 
+--   prop_name, 
+--   `monthly_rent_[0]`, 
+--   region 
+-- FROM 
+--   rental 
+-- WHERE 
+--   `monthly_rent_[0]` < 1500 
+--   AND region = 'Kuala Lumpur' 
+-- SELECT 
+--   prop_name, 
+--   `monthly_rent_[0]`, 
+--   region, 
+--   MyUnknownColumn as Area 
+-- FROM 
+--   rental 
+-- WHERE 
+--   `monthly_rent_[0]` < 1500 
+--   AND region = 'Selangor' 
+-- ORDER BY 
+--   `monthly_rent_[0]`, 
+--   `MyUnknownColumn` 
+-- SELECT 
+--   prop_name, 
+--   `monthly_rent_[0]`, 
+--   region, 
+--   MyUnknownColumn as Area 
+-- FROM 
+--   rental 
+-- WHERE 
+--   `monthly_rent_[0]` < 1500 
+--   AND region = 'Kuala Lumpur' 
+-- ORDER BY 
+--   `monthly_rent_[0]`, 
+--   `MyUnknownColumn` 
+--   join facilities 
+--   and rental table 
+-- SELECT 
+--   * 
+-- FROM 
+--   rental 
+--   JOIN facilities ON rental.ads_id = facilities.ads_id List facilities for apartment under RM1500 
+-- SELECT 
+--   prop_name, 
+--   `monthly_rent_[0]`, 
+--   region, 
+--   MyUnknownColumn as area, 
+--   `additional_facilities`, 
+--   facilities 
+-- FROM 
+--   rental 
+--   JOIN facilities ON rental.ads_id = facilities.ads_id 
+-- WHERE 
+--   `monthly_rent_[0]` < 1500 
+--   AND region = 'Selangor' 
+-- ORDER BY 
+--   `monthly_rent_[0]`, 
+--   MyUnknownColumn List facilities for rental under RM1500 with MRT facilities 
+-- SELECT 
+--   prop_name, 
+--   `monthly_rent_[0]`, 
+--   rooms, 
+--   region, 
+--   MyUnknownColumn as area, 
+--   `additional_facilities` 
+-- FROM 
+--   rental 
+--   JOIN facilities ON rental.ads_id = facilities.ads_id 
+-- WHERE 
+--   `monthly_rent_[0]` < 1500 
+--   AND region = 'Selangor' 
+--   AND `additional_facilities` LIKE '%LRT%' 
+-- ORDER BY 
+--   `monthly_rent_[0]`, 
+--   MyUnknownColumn
